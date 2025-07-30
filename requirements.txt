@@ -1,14 +1,24 @@
-Flask==3.0.3
+Flask==2.3.2
 flask-cors==4.0.0
-python-dotenv==1.0.1
-langchain==0.2.1
-langchain-openai==0.1.8
-langchain-google-genai==1.0.1
-langchain-pinecone==0.1.0
-pinecone-client==3.2.2
-transformers==4.41.1
-sentence-transformers==2.7.0
-torch==2.3.0
-PyPDF2==3.0.1
-huggingface-hub==0.22.2
+python-dotenv==1.1.0
 
+# LangChain core & modules
+langchain==0.3.26
+langchain-openai==0.3.25
+langchain-community==0.3.26
+langchain-huggingface==0.3.0
+langchain-google-genai==2.0.10
+langchain-pinecone==0.2.8
+langchain-text-splitters==0.3.8
+
+# Pinecone
+pinecone-client==3.2.2
+
+# Transformers / embeddings
+transformers==4.30.2
+sentence-transformers==2.2.2
+torch==2.7.1
+
+# Utility
+PyPDF2==3.0.1
+huggingface-hub==0.14.1
