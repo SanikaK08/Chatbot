@@ -25,7 +25,7 @@ DATA_FOLDER = os.path.join(os.path.dirname(__file__), 'data')
 os.makedirs(DATA_FOLDER, exist_ok=True)
 
 embeddings = download_huggingface_embedding()
-index_name = "aichatbot"
+index_name = "bajaj-hackrx-6-chatbot"
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
 def build_rag_chain(index_name):
