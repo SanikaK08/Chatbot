@@ -32,10 +32,13 @@ def build_rag_chain(index_name):
     docsearch = PineconeVectorStore.from_existing_index(index_name=index_name, embedding=embeddings)
     retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 3})
     llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash", temperature=0.0, google_api_key=GOOGLE_API_KEY)
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", system_prompt + "\n{context}"),
+    prompt=ChatPromptTemplate.from_messages(
+    [
+        ("system",system_prompt),
         ("human", "{input}"),
-    ])
+        ("user", "{context}")
+    ]
+)
     que_ans_chain = create_stuff_documents_chain(llm, prompt)
     return create_retrieval_chain(retriever, que_ans_chain)
 
